@@ -1,6 +1,6 @@
 # Twitter API & X data in Convex with Xquik
 
-[![Convex Component](https://www.convex.dev/components/badge/xquik-convex)](https://www.convex.dev/components/xquik-convex)
+[![Convex Component](https://www.convex.dev/components/badge/convex-xquik)](https://www.convex.dev/components/convex-xquik)
 
 A Convex component for every public Xquik X API operation, signed webhooks & live event queries.
 
