@@ -7,6 +7,32 @@ A Convex component for every public Xquik X API operation, signed webhooks & liv
 Xquik is the world's fastest and cheapest X Twitter scraper service with the most complete X data.
 Xquik charges only for delivered, unique, filter-matching results and never pads rows.
 
+## Install the Convex Twitter component
+
+```bash
+npm install xquik-convex
+```
+
+Add the component in `convex/convex.config.ts`.
+
+```ts
+import { defineApp } from "convex/server";
+import { v } from "convex/values";
+import xquik from "xquik-convex/convex.config.js";
+
+const app = defineApp({ env: { XQUIK_API_KEY: v.optional(v.string()) } });
+app.use(xquik, { httpPrefix: "/xquik/", env: { XQUIK_API_KEY: app.env.XQUIK_API_KEY } });
+export default app;
+```
+
+Set your key from the [Xquik dashboard](https://xquik.com/dashboard). Every component function answers `missing_api_key` until you set it.
+
+```bash
+npx convex env set XQUIK_API_KEY xq_your_key
+```
+
+The package is on [npm](https://www.npmjs.com/package/xquik-convex).
+
 <!-- trust:start -->
 
 ## Trust & usage
@@ -47,31 +73,7 @@ Read the full guide at [docs.xquik.com/guides/convex](https://docs.xquik.com/gui
 - Durable jobs that retry safe calls & repeat on a schedule.
 - No X developer account & no X bearer token.
 
-## Install
-
-```bash
-npm install xquik-convex
-```
-
-Add the component in `convex/convex.config.ts`.
-
-```ts
-import { defineApp } from "convex/server";
-import { v } from "convex/values";
-import xquik from "xquik-convex/convex.config.js";
-
-const app = defineApp({ env: { XQUIK_API_KEY: v.optional(v.string()) } });
-app.use(xquik, { httpPrefix: "/xquik/", env: { XQUIK_API_KEY: app.env.XQUIK_API_KEY } });
-export default app;
-```
-
-Set your key from the [Xquik dashboard](https://xquik.com/dashboard). Every component function answers `missing_api_key` until you set it.
-
-```bash
-npx convex env set XQUIK_API_KEY xq_your_key
-```
-
-## Call any operation
+## Call the Twitter API from TypeScript in Convex
 
 Each action takes the operation's path, query, header & body fields side by side. Convex checks them before the call.
 
@@ -91,7 +93,7 @@ Call `components.xquik.operations.getUser` with `{ id: "elonmusk" }` for a profi
 
 Each result has the type & the validator of its schema in the API reference, so the `name` of a `getUser` result is a `string`. The result holds only the fields that schema lists. A JSON-LD key such as `@id` arrives as `id`. Import `OperationResult<"getUser">` from `xquik-convex` to name a result type.
 
-## Receive webhook events
+## Receive Twitter webhook events
 
 ```ts
 import { Xquik, eventFields } from "xquik-convex";
@@ -147,7 +149,7 @@ While a job with the same `key` is scheduled or running, the call returns that j
 
 ## Keep credits safe
 
-Component functions run only from your backend. Wrap them in internal functions, or check the caller's identity & rate limit in each public function that spends credits. The [example app](https://github.com/Xquik-dev/xquik-convex/tree/main/example) keeps every credit-spending function internal.
+Component functions run only from your backend. Wrap them in internal functions, or check the caller's identity & rate limit in each public function that spends credits. The [example app](https://github.com/Xquik-dev/xquik-convex/blob/main/example/README.md) keeps every credit-spending function internal.
 
 ## Test your app
 
@@ -171,6 +173,18 @@ bin/check-local
 
 `example/` holds a runnable Convex app that uses the component. `npm run generate` rebuilds the operation registry from `openapi.json`. The tests prove that every public operation in `openapi.json` is an action, & that every event type gets a receiver test. See [CONTRIBUTING.md](CONTRIBUTING.md) for each check.
 
+## Questions
+
+### Do I need an X developer account?
+
+No. Public reads need only an Xquik API key. Private reads & X account actions
+need a connected X account.
+
+### Is this the official X API?
+
+No. Xquik is an independent third-party service with its own REST API. This component
+calls that API, not the official X API.
+
 ## Documentation
 
 - [Xquik Convex guide](https://docs.xquik.com/guides/convex)
@@ -181,3 +195,13 @@ bin/check-local
 - [Contributing](CONTRIBUTING.md)
 
 Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
+
+## More Xquik tools
+
+- [X (Twitter) scraper API & Twitter MCP server](https://github.com/Xquik-dev/x-twitter-scraper) with REST, MCP & Skill setup.
+- Twitter API SDKs for [TypeScript](https://github.com/Xquik-dev/x-twitter-scraper-typescript), [Python](https://github.com/Xquik-dev/x-twitter-scraper-python), [Go](https://github.com/Xquik-dev/x-twitter-scraper-go), [Ruby](https://github.com/Xquik-dev/x-twitter-scraper-ruby), [Java](https://github.com/Xquik-dev/x-twitter-scraper-java), [Kotlin](https://github.com/Xquik-dev/x-twitter-scraper-kotlin), [C#](https://github.com/Xquik-dev/x-twitter-scraper-csharp) & [PHP](https://github.com/Xquik-dev/x-twitter-scraper-php).
+- [Twitter CLI & X CLI](https://github.com/Xquik-dev/x-twitter-scraper-cli), the [X API alternative skill](https://github.com/Xquik-dev/x-api) and [Twitter advanced search operators](https://github.com/Xquik-dev/x-twitter-advanced-search) with tested examples.
+- Twitter agent plugins for [OpenClaw](https://github.com/Xquik-dev/tweetclaw) & [Hermes Agent](https://github.com/Xquik-dev/hermes-tweet), and the [Twitter API documentation source](https://github.com/Xquik-dev/xquik-docs).
+- Twitter integrations for [n8n](https://github.com/Xquik-dev/n8n-nodes-xquik), [Prefect](https://github.com/Xquik-dev/prefect-xquik), [Haystack](https://github.com/Xquik-dev/xquik-haystack), [Paperclip](https://github.com/Xquik-dev/paperclip-plugin-xquik), [Terraform](https://github.com/Xquik-dev/terraform-provider-x-twitter-scraper), [Convex](https://github.com/Xquik-dev/xquik-convex), [Supabase](https://github.com/Xquik-dev/xquik-supabase) & [Strapi](https://github.com/Xquik-dev/strapi-plugin-xquik).
+- Twitter MCP for [AI agents](https://github.com/Xquik-dev/xquik-mcp), [VS Code](https://github.com/Xquik-dev/xquik-vscode) & [Raycast](https://github.com/Xquik-dev/xquik-raycast).
+- [Xquik X API & Twitter scraper](https://xquik.com) and the [Twitter API documentation](https://docs.xquik.com/api-reference/overview).
