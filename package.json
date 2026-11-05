@@ -1,6 +1,6 @@
 {
   "name": "xquik-convex",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Convex component for X (Twitter) data & actions through Xquik, with signed webhooks & live queries. Not affiliated with X Corp.",
   "license": "Apache-2.0",
   "author": {
