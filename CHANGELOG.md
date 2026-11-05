@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1
+
+- Mark the package free of side effects, so bundlers can drop unused code.
+- Fix the Convex Component badge link in the README.
+- Pin minimatch 11.0.4 to close GHSA-g3hv-75wg-m249.
+
 ## 0.2.0
 
 - Type each operation's result & check it with a validator from `openapi.json`. Export `OperationResult`.
