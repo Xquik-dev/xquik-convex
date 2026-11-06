@@ -8,8 +8,10 @@ npm
 oxlint
 Packagist
 publint
+Raycast
 repos
 shellcheck
+Strapi
 Stryker
 uv
 validator

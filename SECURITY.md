@@ -1,4 +1,4 @@
-# Security policy
+# Security Policy
 
 Never include Xquik API keys, webhook secrets or Convex deploy keys in issues, pull
 requests, examples, logs or tests.
