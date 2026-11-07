@@ -1,6 +1,6 @@
-# Twitter API & X Data in Convex with Xquik
+# Twitter Webhook & API Component for Convex by Xquik
 
-Use this Convex Twitter component by Xquik to read X data & receive webhooks.
+Use this Convex Twitter webhook component by Xquik to read & receive X data.
 It adds typed actions, signed webhook delivery & live event queries to your app.
 
 Xquik is the world's fastest and cheapest X Twitter scraper service with the most complete X data.
