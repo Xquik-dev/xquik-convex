@@ -1,6 +1,6 @@
-# Twitter Webhook & API Component for Convex by Xquik
+# X (Twitter) Webhook & API Component for Convex by Xquik
 
-Use this Convex Twitter webhook component by Xquik to read & receive X data.
+Use this Convex X (Twitter) webhook component by Xquik to read & receive data.
 It adds typed actions, signed webhook delivery & live event queries to your app.
 
 Xquik is the world's fastest and cheapest X Twitter scraper service with the most complete X data.
@@ -16,7 +16,7 @@ The Xquik REST API read 45 tweets per second at $0.15 per 1,000 on 2026-10-15. T
 
 <!-- START: Include on https://convex.dev/components -->
 
-## Install the Convex Twitter component
+## Install the Convex X (Twitter) component
 
 [![Convex Component](https://www.convex.dev/components/badge/convex-xquik)](https://www.convex.dev/components/convex-xquik)
 
@@ -43,11 +43,12 @@ Every component function answers `missing_api_key` until you set it.
 npx convex env set XQUIK_API_KEY xq_your_key
 ```
 
-## Call the Twitter API from TypeScript in Convex
+## Call the X (Twitter) API from TypeScript in Convex
 
 The component has 190 typed actions, 1 per public operation in the [API reference](https://docs.xquik.com/api-reference/overview).
 Each action takes the operation's path, query, header & body fields side by side.
 Convex checks the arguments & the result of each call.
+This action reads the latest tweets of 1 account.
 
 ```ts
 import { v } from "convex/values";
@@ -61,7 +62,7 @@ export const latest = internalAction({
 });
 ```
 
-Next, read the [Xquik Convex guide](https://docs.xquik.com/guides/convex), the [webhook steps](#receive-twitter-webhook-events) or the [live event query](#show-events-live).
+Next, read the [Xquik Convex guide](https://docs.xquik.com/guides/convex), the [webhook steps](#receive-x-twitter-webhook-events) or the [live event query](#show-events-live).
 
 <!-- trust:start -->
 
@@ -89,7 +90,7 @@ The result holds only the fields that schema lists.
 A JSON-LD key such as `@id` arrives as `id`.
 Import `OperationResult<"getUser">` from `xquik-convex` to name a result type.
 
-## Receive Twitter webhook events
+## Receive X (Twitter) webhook events
 
 ```ts
 import { Xquik, eventFields } from "xquik-convex";
@@ -178,15 +179,15 @@ xquikTest.register(t);
 
 ## Questions
 
-### Do I need an X developer account?
+### Do I need an X (Twitter) developer account?
 
 No. Public reads need only an Xquik API key.
-Private reads & X account actions need a connected X account.
+Private reads & account actions need a connected X (Twitter) account.
 
-### Is this the official X API?
+### Is this the official X (Twitter) API?
 
 No. Xquik runs its own REST API.
-This component calls that API, not the official X API.
+This component calls that API, not the official X (Twitter) API.
 
 ## Develop
 
@@ -213,13 +214,14 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for each check.
 
 ## More Xquik tools
 
-- [X (Twitter) scraper API & Twitter MCP server](https://github.com/Xquik-dev/x-twitter-scraper) with REST, MCP & Skill setup.
-- Twitter API SDKs for [TypeScript](https://github.com/Xquik-dev/x-twitter-scraper-typescript), [Python](https://github.com/Xquik-dev/x-twitter-scraper-python), [Go](https://github.com/Xquik-dev/x-twitter-scraper-go), [Ruby](https://github.com/Xquik-dev/x-twitter-scraper-ruby), [Java](https://github.com/Xquik-dev/x-twitter-scraper-java), [Kotlin](https://github.com/Xquik-dev/x-twitter-scraper-kotlin), [C#](https://github.com/Xquik-dev/x-twitter-scraper-csharp) & [PHP](https://github.com/Xquik-dev/x-twitter-scraper-php).
-- [Twitter CLI & X CLI](https://github.com/Xquik-dev/x-twitter-scraper-cli) for terminal workflows.
-- The [X API alternative skill](https://github.com/Xquik-dev/x-api) & [Twitter advanced search operators](https://github.com/Xquik-dev/x-twitter-advanced-search).
-- Twitter agent plugins for [OpenClaw](https://github.com/Xquik-dev/tweetclaw) & [Hermes Agent](https://github.com/Xquik-dev/hermes-tweet), and the [Twitter API documentation source](https://github.com/Xquik-dev/xquik-docs).
-- Twitter integrations for [n8n](https://github.com/Xquik-dev/n8n-nodes-xquik), [Prefect](https://github.com/Xquik-dev/prefect-xquik), [Haystack](https://github.com/Xquik-dev/xquik-haystack), [Paperclip](https://github.com/Xquik-dev/paperclip-plugin-xquik), [Terraform](https://github.com/Xquik-dev/terraform-provider-x-twitter-scraper), [Supabase](https://github.com/Xquik-dev/xquik-supabase) & [Strapi](https://github.com/Xquik-dev/strapi-plugin-xquik).
-- Twitter MCP for [AI agents](https://github.com/Xquik-dev/xquik-mcp), [VS Code](https://github.com/Xquik-dev/xquik-vscode) & [Raycast](https://github.com/Xquik-dev/xquik-raycast).
-- [Xquik X API & Twitter scraper](https://xquik.com) and the [Twitter API documentation](https://docs.xquik.com/api-reference/overview).
+- [X (Twitter) scraper API & MCP server](https://github.com/Xquik-dev/x-twitter-scraper) with REST, MCP & Skill setup.
+- X (Twitter) API SDKs for [TypeScript](https://github.com/Xquik-dev/x-twitter-scraper-typescript), [Python](https://github.com/Xquik-dev/x-twitter-scraper-python), [Go](https://github.com/Xquik-dev/x-twitter-scraper-go), [Ruby](https://github.com/Xquik-dev/x-twitter-scraper-ruby), [Java](https://github.com/Xquik-dev/x-twitter-scraper-java), [Kotlin](https://github.com/Xquik-dev/x-twitter-scraper-kotlin), [C#](https://github.com/Xquik-dev/x-twitter-scraper-csharp) & [PHP](https://github.com/Xquik-dev/x-twitter-scraper-php).
+- [X (Twitter) CLI](https://github.com/Xquik-dev/x-twitter-scraper-cli) for terminal workflows.
+- The [X (Twitter) API alternative skill](https://github.com/Xquik-dev/x-api) & [X (Twitter) advanced search operators](https://github.com/Xquik-dev/x-twitter-advanced-search).
+- X (Twitter) agent plugins for [OpenClaw](https://github.com/Xquik-dev/tweetclaw) & [Hermes Agent](https://github.com/Xquik-dev/hermes-tweet).
+- The [X (Twitter) API documentation source](https://github.com/Xquik-dev/xquik-docs).
+- X (Twitter) integrations for [n8n](https://github.com/Xquik-dev/n8n-nodes-xquik), [Prefect](https://github.com/Xquik-dev/prefect-xquik), [Haystack](https://github.com/Xquik-dev/xquik-haystack), [Paperclip](https://github.com/Xquik-dev/paperclip-plugin-xquik), [Terraform](https://github.com/Xquik-dev/terraform-provider-x-twitter-scraper), [Supabase](https://github.com/Xquik-dev/xquik-supabase) & [Strapi](https://github.com/Xquik-dev/strapi-plugin-xquik).
+- X (Twitter) MCP for [AI agents](https://github.com/Xquik-dev/xquik-mcp), [VS Code](https://github.com/Xquik-dev/xquik-vscode) & [Raycast](https://github.com/Xquik-dev/xquik-raycast).
+- [Xquik X (Twitter) API & scraper](https://xquik.com) and the [X (Twitter) API documentation](https://docs.xquik.com/api-reference/overview).
 
 Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.

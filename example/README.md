@@ -1,6 +1,6 @@
-# Convex Twitter Example App
+# Convex X (Twitter) Example App
 
-Use this Convex Twitter example by Xquik to run the component in a real app.
+Use this Convex X (Twitter) example by Xquik to run the component in a real app.
 It installs the component from this repository.
 
 Xquik is the world's fastest and cheapest X Twitter scraper service with the most complete X data.
