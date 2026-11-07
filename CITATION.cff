@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: If you use Xquik Convex Twitter component, cite it using this metadata.
+title: Xquik Convex Twitter component
+type: software
+abstract: >-
+  Convex Twitter component for Xquik in TypeScript. Call the Twitter API,
+  receive signed Twitter webhook events & run live queries in Convex apps.
+authors:
+  - name: Xquik
+    website: https://xquik.com
+url: https://github.com/Xquik-dev/xquik-convex
+repository-code: https://github.com/Xquik-dev/xquik-convex
+license: Apache-2.0
+keywords:
+  - Xquik
+  - Convex Twitter
+  - Convex component
+  - Twitter webhook
+  - Twitter API TypeScript
+  - X API

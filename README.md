@@ -1,53 +1,24 @@
-# Twitter API & X data in Convex with Xquik
+# X (Twitter) Webhook & API Component for Convex by Xquik
 
-[![Convex Component](https://www.convex.dev/components/badge/convex-xquik)](https://www.convex.dev/components/convex-xquik)
-
-A Convex component for every public Xquik X API operation, signed webhooks & live event queries.
+Use this Convex X (Twitter) webhook component by Xquik to read & receive data.
+It adds typed actions, signed webhook delivery & live event queries to your app.
 
 Xquik is the world's fastest and cheapest X Twitter scraper service with the most complete X data.
+Most other Apify Actors charge before filtering or deduplication.
 Xquik charges only for delivered, unique, filter-matching results and never pads rows.
+Xquik is independent and not affiliated with X Corp.
 
-<!-- trust:start -->
+<!-- trust:win:start -->
 
-## Trust & usage
+The Xquik REST API read 45 tweets per second at $0.15 per 1,000 on 2026-10-15. The fastest of 4 rival Actors read 12.5 per second. The cheapest cost $0.173 per 1,000. [Compare each run](https://xquik.com/benchmarks#benchmark-x-tweet-scraper).
 
-[![Twitter API package downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fdownloads.json)](https://xquik.com/trust#downloads)
-[![Twitter scraper users on Apify](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fapify-users.json)](https://apify.com/xquik)
-[![Twitter scraper runs on Apify](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fapify-runs.json)](https://apify.com/xquik)
-[![Tweet scraper rating on Apify](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fapify-rating.json)](https://apify.com/xquik/x-tweet-scraper/reviews)
-[![Xquik Twitter API accounts](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Faccounts.json)](https://xquik.com/trust#accounts)
-[![Twitter Skill installs](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fskill-installs.json)](https://xquik.com/trust#skill-installs)
-[![Xquik verified revenue on TrustMRR](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Frevenue.json)](https://trustmrr.com/startup/xquik)
-[![Twitter API p99 server read time](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Frest-p99.json)](https://xquik.com/trust#speed)
-[![Xquik GitHub stars](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fgithub-stars.json)](https://github.com/Xquik-dev)
-
-- 54,000+ downloads of Xquik's Twitter API packages on npm, PyPI, RubyGems, NuGet, Packagist & Terraform ([source](https://xquik.com/trust#downloads)) <!-- trust:downloads 54576 -->
-- 10,000+ users of Xquik's Twitter scraper Actors on Apify ([source](https://apify.com/xquik)) <!-- trust:apify-users 10119 -->
-- 7,000,000+ runs of Xquik's Twitter scraper Actors on Apify ([source](https://apify.com/xquik)) <!-- trust:apify-runs 7076266 -->
-- 4.66 of 5 for the X Tweet Scraper from 16 Apify reviews ([source](https://apify.com/xquik/x-tweet-scraper/reviews)) <!-- trust:apify-rating 4.66 16 -->
-- 4,100+ accounts on xquik.com ([source](https://xquik.com/trust#accounts)) <!-- trust:accounts 4126 -->
-- 1,600+ installs of Xquik's Twitter Skills on skills.sh ([source](https://xquik.com/trust#skill-installs)) <!-- trust:skill-installs 1619 -->
-- $40,000+ in revenue verified by TrustMRR ([source](https://trustmrr.com/startup/xquik)) <!-- trust:revenue 40329 -->
-- 13.8 s p99 REST API server read time over 7 days, failed reads included ([source](https://xquik.com/trust#speed)) <!-- trust:rest-p99 13778 -->
-- 380+ GitHub stars across Xquik's repos ([source](https://github.com/Xquik-dev)) <!-- trust:github-stars 386 -->
-
-Checked on 2026-10-28. See each number with its date & source on [xquik.com/trust](https://xquik.com/trust) or as [JSON](https://xquik.com/trust.json).
-
-<!-- trust:end -->
+<!-- trust:win:end -->
 
 <!-- START: Include on https://convex.dev/components -->
 
-Read the full guide at [docs.xquik.com/guides/convex](https://docs.xquik.com/guides/convex).
+## Install the Convex X (Twitter) component
 
-## What you get
-
-- 190 typed Convex actions, 1 for each public operation in the [Xquik API reference](https://docs.xquik.com/api-reference/overview). Convex checks the arguments & the result of each call.
-- A webhook receiver that checks each delivery's signature & stores each event once.
-- Live queries over stored events, so your UI updates as events arrive.
-- Durable jobs that retry safe calls & repeat on a schedule.
-- No X developer account & no X bearer token.
-
-## Install
+[![Convex Component](https://www.convex.dev/components/badge/convex-xquik)](https://www.convex.dev/components/convex-xquik)
 
 ```bash
 npm install xquik-convex
@@ -65,15 +36,19 @@ app.use(xquik, { httpPrefix: "/xquik/", env: { XQUIK_API_KEY: app.env.XQUIK_API_
 export default app;
 ```
 
-Set your key from the [Xquik dashboard](https://xquik.com/dashboard). Every component function answers `missing_api_key` until you set it.
+Set your key from the [Xquik dashboard](https://xquik.com/dashboard).
+Every component function answers `missing_api_key` until you set it.
 
 ```bash
 npx convex env set XQUIK_API_KEY xq_your_key
 ```
 
-## Call any operation
+## Call the X (Twitter) API from TypeScript in Convex
 
-Each action takes the operation's path, query, header & body fields side by side. Convex checks them before the call.
+The component has 190 typed actions, 1 per public operation in the [API reference](https://docs.xquik.com/api-reference/overview).
+Each action takes the operation's path, query, header & body fields side by side.
+Convex checks the arguments & the result of each call.
+This action reads the latest tweets of 1 account.
 
 ```ts
 import { v } from "convex/values";
@@ -87,11 +62,35 @@ export const latest = internalAction({
 });
 ```
 
-Call `components.xquik.operations.getUser` with `{ id: "elonmusk" }` for a profile. A failed call throws a `ConvexError`. Its data has `status`, `error`, `message` & `retryAfter` in seconds for a 429.
+Next, read the [Xquik Convex guide](https://docs.xquik.com/guides/convex), the [webhook steps](#receive-x-twitter-webhook-events) or the [live event query](#show-events-live).
 
-Each result has the type & the validator of its schema in the API reference, so the `name` of a `getUser` result is a `string`. The result holds only the fields that schema lists. A JSON-LD key such as `@id` arrives as `id`. Import `OperationResult<"getUser">` from `xquik-convex` to name a result type.
+<!-- trust:start -->
 
-## Receive webhook events
+## Benchmarks & usage
+
+[![Twitter API p99 server read time](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Frest-p99.json)](https://xquik.com/benchmarks#speed)
+[![Twitter API package downloads](https://img.shields.io/endpoint?url=https%3A%2F%2Fxquik.com%2Fbadges%2Fdownloads.json)](https://xquik.com/benchmarks#downloads)
+
+- 6.4 s p99 REST API server read time over 7 days, failed reads included ([source](https://xquik.com/benchmarks#speed)) <!-- trust:rest-p99 6317 -->
+- 63,000+ downloads of Xquik's Twitter API packages on npm, PyPI, RubyGems, NuGet, Packagist & Terraform ([source](https://xquik.com/benchmarks#downloads)) <!-- trust:downloads 63178 -->
+
+Checked on 2026-11-06. See each number with its date & source on [xquik.com/benchmarks](https://xquik.com/benchmarks) or as [JSON](https://xquik.com/trust.json).
+
+<!-- trust:end -->
+
+## Read results
+
+Call `components.xquik.operations.getUser` with `{ id: "elonmusk" }` for a profile.
+A failed call throws a `ConvexError`.
+Its data has `status`, `error`, `message` & `retryAfter` in seconds for a 429.
+
+Each result has the type & validator of its API reference schema.
+The `name` of a `getUser` result is a `string`.
+The result holds only the fields that schema lists.
+A JSON-LD key such as `@id` arrives as `id`.
+Import `OperationResult<"getUser">` from `xquik-convex` to name a result type.
+
+## Receive X (Twitter) webhook events
 
 ```ts
 import { Xquik, eventFields } from "xquik-convex";
@@ -115,9 +114,16 @@ export const onEvent = internalMutation({
 });
 ```
 
-The component creates the Xquik webhook at `https://<deployment>.convex.site/xquik/webhooks/<token>`. It keeps the signing secret in its own table. Each delivery must carry a valid `X-Xquik-Signature` & a timestamp within 5 minutes. A replayed nonce gets a 401. A retry with the same `streamEventId` is stored once, and your handler runs once per endpoint. The `webhook.test` alert gets a 200 & sets `testedAt` on the endpoint.
+The component creates the Xquik webhook at `https://<deployment>.convex.site/xquik/webhooks/<token>`.
+It keeps the signing secret in its own table.
+Each delivery must carry a valid `X-Xquik-Signature` & a timestamp within 5 minutes.
+A replayed nonce gets a 401.
+The component stores a retry with the same `streamEventId` once.
+Your handler runs once per endpoint.
+The `webhook.test` alert gets a 200 & sets `testedAt` on the endpoint.
 
-For a webhook made elsewhere, call `xquik.addWebhook(ctx, { secret })` from a mutation & paste the URL it returns.
+To add a webhook made elsewhere, call `xquik.addWebhook(ctx, { secret })` from a mutation.
+Paste the URL it returns.
 
 ## Show events live
 
@@ -135,7 +141,8 @@ export const events = query({
 });
 ```
 
-Use it with `usePaginatedQuery(api.x.events, {}, { initialNumItems: 20 })`. Pass `filter: { eventType }` or `filter: { monitorId }` to narrow the list.
+Use it with `usePaginatedQuery(api.x.events, {}, { initialNumItems: 20 })`.
+Pass `filter: { eventType }` or `filter: { monitorId }` to narrow the list.
 
 ## Schedule calls
 
@@ -143,11 +150,20 @@ Use it with `usePaginatedQuery(api.x.events, {}, { initialNumItems: 20 })`. Pass
 await xquik.schedule(ctx, "listEvents", { limit: 100 }, { key: "events", everyMs: 5 * 60 * 1000 });
 ```
 
-While a job with the same `key` is scheduled or running, the call returns that job's ID. A read, or a write that takes an `Idempotency-Key`, makes up to 5 attempts on a 429, a 5xx or a network error. The component fills the key for you. A result that breaks its schema fails the job without a retry. Scheduled `listEvents` jobs store their events with the webhook events. Read a job with `components.xquik.jobs.get` & stop it with `components.xquik.jobs.cancel`.
+A call with the `key` of a live job returns that job's ID.
+Reads make up to 5 attempts on a 429, 5xx or network error.
+So do writes that take an `Idempotency-Key`, and the component fills that key.
+A result that breaks its schema fails the job without a retry.
+Scheduled `listEvents` jobs store their events with the webhook events.
+Read a job with `components.xquik.jobs.get`.
+Stop it with `components.xquik.jobs.cancel`.
 
 ## Keep credits safe
 
-Component functions run only from your backend. Wrap them in internal functions, or check the caller's identity & rate limit in each public function that spends credits. The [example app](https://github.com/Xquik-dev/xquik-convex/tree/main/example) keeps every credit-spending function internal.
+Component functions run only from your backend.
+Wrap them in internal functions.
+A public function that spends credits must check the caller's identity & rate limit.
+The [example app](https://github.com/Xquik-dev/xquik-convex/blob/main/example/README.md) keeps every credit-spending function internal.
 
 ## Test your app
 
@@ -161,6 +177,18 @@ xquikTest.register(t);
 
 <!-- END: Include on https://convex.dev/components -->
 
+## Questions
+
+### Do I need an X (Twitter) developer account?
+
+No. Public reads need only an Xquik API key.
+Private reads & account actions need a connected X (Twitter) account.
+
+### Is this the official X (Twitter) API?
+
+No. Xquik runs its own REST API.
+This component calls that API, not the official X (Twitter) API.
+
 ## Develop
 
 ```bash
@@ -169,7 +197,11 @@ npm run generate
 bin/check-local
 ```
 
-`example/` holds a runnable Convex app that uses the component. `npm run generate` rebuilds the operation registry from `openapi.json`. The tests prove that every public operation in `openapi.json` is an action, & that every event type gets a receiver test. See [CONTRIBUTING.md](CONTRIBUTING.md) for each check.
+`example/` holds a runnable Convex app that uses the component.
+`npm run generate` rebuilds the operation registry from `openapi.json`.
+The tests prove that every public operation in `openapi.json` is an action.
+They also prove that every event type gets a receiver test.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for each check.
 
 ## Documentation
 
@@ -179,5 +211,17 @@ bin/check-local
 - [Organization support policy](https://github.com/Xquik-dev/.github/blob/main/SUPPORT.md)
 - [Security policy](SECURITY.md)
 - [Contributing](CONTRIBUTING.md)
+
+## More Xquik tools
+
+- [X (Twitter) scraper API & MCP server](https://github.com/Xquik-dev/x-twitter-scraper) with REST, MCP & Skill setup.
+- X (Twitter) API SDKs for [TypeScript](https://github.com/Xquik-dev/x-twitter-scraper-typescript), [Python](https://github.com/Xquik-dev/x-twitter-scraper-python), [Go](https://github.com/Xquik-dev/x-twitter-scraper-go), [Ruby](https://github.com/Xquik-dev/x-twitter-scraper-ruby), [Java](https://github.com/Xquik-dev/x-twitter-scraper-java), [Kotlin](https://github.com/Xquik-dev/x-twitter-scraper-kotlin), [C#](https://github.com/Xquik-dev/x-twitter-scraper-csharp) & [PHP](https://github.com/Xquik-dev/x-twitter-scraper-php).
+- [X (Twitter) CLI](https://github.com/Xquik-dev/x-twitter-scraper-cli) for terminal workflows.
+- The [X (Twitter) API alternative skill](https://github.com/Xquik-dev/x-api) & [X (Twitter) advanced search operators](https://github.com/Xquik-dev/x-twitter-advanced-search).
+- X (Twitter) agent plugins for [OpenClaw](https://github.com/Xquik-dev/tweetclaw) & [Hermes Agent](https://github.com/Xquik-dev/hermes-tweet).
+- The [X (Twitter) API documentation source](https://github.com/Xquik-dev/xquik-docs).
+- X (Twitter) integrations for [n8n](https://github.com/Xquik-dev/n8n-nodes-xquik), [Prefect](https://github.com/Xquik-dev/prefect-xquik), [Haystack](https://github.com/Xquik-dev/xquik-haystack), [Paperclip](https://github.com/Xquik-dev/paperclip-plugin-xquik), [Terraform](https://github.com/Xquik-dev/terraform-provider-x-twitter-scraper), [Supabase](https://github.com/Xquik-dev/xquik-supabase) & [Strapi](https://github.com/Xquik-dev/strapi-plugin-xquik).
+- X (Twitter) MCP for [AI agents](https://github.com/Xquik-dev/xquik-mcp), [VS Code](https://github.com/Xquik-dev/xquik-vscode) & [Raycast](https://github.com/Xquik-dev/xquik-raycast).
+- [Xquik X (Twitter) API & scraper](https://xquik.com) and the [X (Twitter) API documentation](https://docs.xquik.com/api-reference/overview).
 
 Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.

@@ -1,5 +1,6 @@
 Apify
 cyclomatic
+deduplication
 ESLint
 gitleaks
 jq
@@ -8,9 +9,13 @@ npm
 oxlint
 Packagist
 publint
+Raycast
 repos
+SDKs
 shellcheck
+Strapi
 Stryker
+Supabase
 uv
 validator
 Vitest
