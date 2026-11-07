@@ -3,7 +3,7 @@
 Use this Convex X (Twitter) webhook component by Xquik to read & receive data.
 It adds typed actions, signed webhook delivery & live event queries to your app.
 
-Xquik is the world's fastest and cheapest X Twitter scraper service with the most complete X data.
+Xquik is the world's fastest and cheapest X (Twitter) scraper service with the most complete X (Twitter) data.
 Most other Apify Actors charge before filtering or deduplication.
 Xquik charges only for delivered, unique, filter-matching results and never pads rows.
 Xquik is independent and not affiliated with X Corp.
