@@ -1,4 +1,4 @@
-# X (Twitter) Webhook & API Component for Convex by Xquik
+# Convex X (Twitter) Webhook & API Component by Xquik
 
 Use this Convex X (Twitter) webhook component by Xquik to read tweets & posts and receive events.
 It adds typed actions, signed webhook delivery & live event queries to your app.
