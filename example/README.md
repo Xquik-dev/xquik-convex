@@ -1,5 +1,9 @@
 # Convex X (Twitter) Example App
 
+[![Framer builds a tweet ticker with Xquik](https://img.youtube.com/vi/4UOSpoOoC3Y/maxresdefault.jpg)](https://youtu.be/4UOSpoOoC3Y?t=367)\
+[Watch Framer build a tweet ticker with Xquik, from 6:07](https://youtu.be/4UOSpoOoC3Y?t=367).
+This example calls the Xquik API through the component.
+
 Use this Convex X (Twitter) example by Xquik to run the component in a real app.
 It installs the component from this repository.
 
