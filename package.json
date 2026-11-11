@@ -98,7 +98,7 @@
     "@stryker-mutator/vitest-runner": "10.1.1",
     "@types/node": "26.6.5",
     "@vitest/coverage-v8": "5.0.5",
-    "convex": "1.48.0",
+    "convex": "1.49.0",
     "convex-test": "0.0.66",
     "eslint": "10.13.0",
     "fallow": "3.37.0",
