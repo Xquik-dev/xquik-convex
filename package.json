@@ -90,7 +90,7 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.5",
-    "@convex-dev/eslint-plugin": "5.0.0",
+    "@convex-dev/eslint-plugin": "5.0.1",
     "@edge-runtime/vm": "5.0.0",
     "@eslint/js": "10.0.1",
     "@stryker-mutator/core": "10.1.1",
